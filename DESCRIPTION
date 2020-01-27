@@ -1,0 +1,17 @@
+Package: Bioc2019Anno
+Type: Package
+Title: Package for Bioconductor 2018 annotation workshop
+Version: 0.5
+Date: 2019-03-12
+Author: James W. MacDonald and Lori Shepherd
+Maintainer: James W. MacDonald <jmacdon@uw.edu>
+Description: This is a package for the annotation workshop, presented
+	     at BioC 2019.
+License: Apache License 2.0
+VignetteBuilder: knitr
+Depends: org.Hs.eg.db,
+	 TxDb.Hsapiens.UCSC.hg19.knownGene, EnsDb.Hsapiens.v79,
+	 Homo.sapiens, BSgenome, BSgenome.Hsapiens.UCSC.hg19,
+	 hugene20sttranscriptcluster.db, AnnotationDbi, biomaRt,
+	 AnnotationHub, EnsDb.Mmusculus.v79, Organism.dplyr
+Suggests: rmarkdown, knitr

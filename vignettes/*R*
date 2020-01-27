@@ -1,0 +1,1022 @@
+
+R version 3.6.0 (2019-04-26) -- "Planting of a Tree"
+Copyright (C) 2019 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> > options(STERM='iESS', str.dendrogram.last="'", editor='emacsclient', show.error.locations=TRUE)
+> library(rmarkdown)
+> render("AnnotationWorkshop.Rmd")
+
+
+processing file: AnnotationWorkshop.Rmd
+  |.                                                                |   1%
+  ordinary text without R code
+
+  |.                                                                |   2%
+label: setup (with options) 
+List of 2
+ $ include: logi FALSE
+ $ warning: logi FALSE
+
+Quitting from lines 103-115 (AnnotationWorkshop.Rmd) 
+Error in library(Bioc2019Anno) : 
+  there is no package called 'Bioc2019Anno'
+
+> library(BiocManager)
+Bioconductor version 3.9 (BiocManager 1.30.4), ?BiocManager::install for help
+> library(remotes)
+> install("jmacdon/Bioc2019Anno")
+Bioconductor version 3.9 (BiocManager 1.30.4), R 3.6.0 (2019-04-26)
+Installing github package(s) 'jmacdon/Bioc2019Anno'
+Downloading GitHub repo jmacdon/Bioc2019Anno@master
+These packages have more recent versions available.
+Which would you like to update?
+
+1:   All
+2:   CRAN packages only
+3:   None
+4:   dbplyr       (1.4.1  -> 1.4.2 ) [CRAN]
+5:   GenomicAl... (1.20.0 -> 1.20.1) [CRAN]
+6:   GenomicFe... (1.36.1 -> 1.36.3) [CRAN]
+7:   rlang        (0.3.4  -> 0.4.0 ) [CRAN]
+
+Enter one or more numbers separated by spaces, or an empty line to cancel
+1: 1
+dbplyr       (1.4.1  -> 1.4.2 ) [CRAN]
+GenomicAl... (1.20.0 -> 1.20.1) [CRAN]
+GenomicFe... (1.36.1 -> 1.36.3) [CRAN]
+rlang        (0.3.4  -> 0.4.0 ) [CRAN]
+Installing 4 packages: dbplyr, GenomicAlignments, GenomicFeatures, rlang
+trying URL 'https://cran.rstudio.com/src/contrib/dbplyr_1.4.2.tar.gz'
+Content type 'application/x-gzip' length 303397 bytes (296 KB)
+==================================================
+downloaded 296 KB
+
+trying URL 'https://bioconductor.org/packages/3.9/bioc/src/contrib/GenomicAlignments_1.20.1.tar.gz'
+Content type 'application/x-gzip' length 2314963 bytes (2.2 MB)
+==================================================
+downloaded 2.2 MB
+
+trying URL 'https://bioconductor.org/packages/3.9/bioc/src/contrib/GenomicFeatures_1.36.3.tar.gz'
+Content type 'application/x-gzip' length 1373475 bytes (1.3 MB)
+==================================================
+downloaded 1.3 MB
+
+trying URL 'https://cran.rstudio.com/src/contrib/rlang_0.4.0.tar.gz'
+Content type 'application/x-gzip' length 859737 bytes (839 KB)
+==================================================
+downloaded 839 KB
+
+* installing *source* package ‘GenomicAlignments’ ...
+** using staged installation
+** libs
+gcc -std=gnu99 -I"/data/oldR/R-3.6.0/lib64/R/include" -DNDEBUG  -I"/data/oldR/R-3.6.0/lib64/R/library/S4Vectors/include" -I"/data/oldR/R-3.6.0/lib64/R/library/IRanges/include" -I/usr/local/include  -fpic  -g -O2  -c IRanges_stubs.c -o IRanges_stubs.o
+gcc -std=gnu99 -I"/data/oldR/R-3.6.0/lib64/R/include" -DNDEBUG  -I"/data/oldR/R-3.6.0/lib64/R/library/S4Vectors/include" -I"/data/oldR/R-3.6.0/lib64/R/library/IRanges/include" -I/usr/local/include  -fpic  -g -O2  -c R_init_GenomicAlignments.c -o R_init_GenomicAlignments.o
+gcc -std=gnu99 -I"/data/oldR/R-3.6.0/lib64/R/include" -DNDEBUG  -I"/data/oldR/R-3.6.0/lib64/R/library/S4Vectors/include" -I"/data/oldR/R-3.6.0/lib64/R/library/IRanges/include" -I/usr/local/include  -fpic  -g -O2  -c S4Vectors_stubs.c -o S4Vectors_stubs.o
+gcc -std=gnu99 -I"/data/oldR/R-3.6.0/lib64/R/include" -DNDEBUG  -I"/data/oldR/R-3.6.0/lib64/R/library/S4Vectors/include" -I"/data/oldR/R-3.6.0/lib64/R/library/IRanges/include" -I/usr/local/include  -fpic  -g -O2  -c cigar_utils.c -o cigar_utils.o
+gcc -std=gnu99 -I"/data/oldR/R-3.6.0/lib64/R/include" -DNDEBUG  -I"/data/oldR/R-3.6.0/lib64/R/library/S4Vectors/include" -I"/data/oldR/R-3.6.0/lib64/R/library/IRanges/include" -I/usr/local/include  -fpic  -g -O2  -c coordinate_mapping_methods.c -o coordinate_mapping_methods.o
+gcc -std=gnu99 -I"/data/oldR/R-3.6.0/lib64/R/include" -DNDEBUG  -I"/data/oldR/R-3.6.0/lib64/R/library/S4Vectors/include" -I"/data/oldR/R-3.6.0/lib64/R/library/IRanges/include" -I/usr/local/include  -fpic  -g -O2  -c encodeOverlaps_methods.c -o encodeOverlaps_methods.o
+gcc -std=gnu99 -shared -L/data/oldR/R-3.6.0/lib64/R/lib -L/usr/local/lib64 -o GenomicAlignments.so IRanges_stubs.o R_init_GenomicAlignments.o S4Vectors_stubs.o cigar_utils.o coordinate_mapping_methods.o encodeOverlaps_methods.o -L/data/oldR/R-3.6.0/lib64/R/lib -lR
+installing to /data/oldR/R-3.6.0/lib64/R/library/00LOCK-GenomicAlignments/00new/GenomicAlignments/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (GenomicAlignments)
+* installing *source* package ‘GenomicFeatures’ ...
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (GenomicFeatures)
+* installing *source* package ‘rlang’ ...
+** package ‘rlang’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+gcc -std=gnu99 -I"/data/oldR/R-3.6.0/lib64/R/include" -DNDEBUG -I./lib/  -I/usr/local/include  -fpic  -g -O2  -c capture.c -o capture.o
+gcc -std=gnu99 -I"/data/oldR/R-3.6.0/lib64/R/include" -DNDEBUG -I./lib/  -I/usr/local/include  -fpic  -g -O2  -c export.c -o export.o
+gcc -std=gnu99 -I"/data/oldR/R-3.6.0/lib64/R/include" -DNDEBUG -I./lib/  -I/usr/local/include  -fpic  -g -O2  -c internal.c -o internal.o
+gcc -std=gnu99 -I"/data/oldR/R-3.6.0/lib64/R/include" -DNDEBUG -I./lib/  -I/usr/local/include  -fpic  -g -O2  -c lib.c -o lib.o
+gcc -std=gnu99 -shared -L/data/oldR/R-3.6.0/lib64/R/lib -L/usr/local/lib64 -o rlang.so capture.o export.o internal.o lib.o -L/data/oldR/R-3.6.0/lib64/R/lib -lR
+installing to /data/oldR/R-3.6.0/lib64/R/library/00LOCK-rlang/00new/rlang/libs
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (rlang)
+* installing *source* package ‘dbplyr’ ...
+** package ‘dbplyr’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (dbplyr)
+
+The downloaded source packages are in
+	‘/data/tmp/RtmpakapwO/downloaded_packages’
+Updating HTML index of packages in '.Library'
+Making 'packages.html' ... done
+✔  checking for file ‘/data/tmp/RtmpakapwO/remotesbabb4d5dbe6f/jmacdon-Bioc2019Anno-e7ed218/DESCRIPTION’ (376ms)
+─  preparing ‘Bioc2019Anno’:
+✔  checking DESCRIPTION meta-information
+─  installing the package to process help pages
+─  saving partial Rd database (33.7s)
+─  checking for LF line-endings in source and make files and shell scripts
+─  checking for empty or unneeded directories
+─  building ‘Bioc2019Anno_0.5.tar.gz’
+   
+* installing *source* package ‘Bioc2019Anno’ ...
+** using staged installation
+** inst
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (Bioc2019Anno)
+Update old packages: 'bayestestR', 'cluster', 'deldir', 'DOSE', 'edgeR',
+  'ellipsis', 'flextable', 'gdtools', 'GenomicScores', 'ggplot2', 'logspline',
+  'mvtnorm', 'officer', 'phangorn', 'plm', 'plotrix', 'polspline',
+  'prediction', 'quantmod', 'remotes', 'rotl', 'segmented', 'sjmisc',
+  'StanHeaders', 'systemPipeR', 'tinytex', 'tximport', 'UniProt.ws', 'vdiffr',
+  'xfun'
+Update all/some/none? [a/s/n]: n
+> render("AnnotationWorkshop.Rmd")
+
+
+processing file: AnnotationWorkshop.Rmd
+  |.                                                                |   1%
+  ordinary text without R code
+
+  |.                                                                |   2%
+label: setup (with options) 
+List of 2
+ $ include: logi FALSE
+ $ warning: logi FALSE
+
+  |..                                                               |   3%
+  ordinary text without R code
+
+  |...                                                              |   4%
+label: unnamed-chunk-1 (with options) 
+List of 2
+ $ out.width: chr "75%"
+ $ echo     : logi FALSE
+
+  |...                                                              |   5%
+  ordinary text without R code
+
+  |....                                                             |   6%
+label: unnamed-chunk-2 (with options) 
+List of 2
+ $ out.width: chr "75%"
+ $ echo     : logi FALSE
+
+  |.....                                                            |   7%
+  ordinary text without R code
+
+  |.....                                                            |   8%
+label: unnamed-chunk-3 (with options) 
+List of 2
+ $ out.width: chr "75%"
+ $ echo     : logi FALSE
+
+  |......                                                           |   9%
+  ordinary text without R code
+
+  |......                                                           |  10%
+label: unnamed-chunk-4 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |.......                                                          |  11%
+  ordinary text without R code
+
+  |........                                                         |  12%
+label: unnamed-chunk-5 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |........                                                         |  13%
+  ordinary text without R code
+
+  |.........                                                        |  14%
+label: unnamed-chunk-6 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |..........                                                       |  15%
+  ordinary text without R code
+
+  |..........                                                       |  16%
+label: unnamed-chunk-7 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ warning: logi FALSE
+
+  |...........                                                      |  17%
+  ordinary text without R code
+
+  |............                                                     |  18%
+label: unnamed-chunk-8 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |............                                                     |  19%
+  ordinary text without R code
+
+  |.............                                                    |  20%
+label: unnamed-chunk-9 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |..............                                                   |  21%
+  ordinary text without R code
+
+  |..............                                                   |  22%
+label: unnamed-chunk-10 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |...............                                                  |  23%
+  ordinary text without R code
+
+  |...............                                                  |  24%
+label: unnamed-chunk-11 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |................                                                 |  25%
+  ordinary text without R code
+
+  |.................                                                |  26%
+label: unnamed-chunk-12 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |.................                                                |  27%
+  ordinary text without R code
+
+  |..................                                               |  28%
+label: unnamed-chunk-13 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |...................                                              |  29%
+  ordinary text without R code
+
+  |...................                                              |  30%
+label: unnamed-chunk-14 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |....................                                             |  31%
+  ordinary text without R code
+
+  |.....................                                            |  32%
+label: unnamed-chunk-15 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |.....................                                            |  33%
+  ordinary text without R code
+
+  |......................                                           |  34%
+label: unnamed-chunk-16 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |.......................                                          |  35%
+  ordinary text without R code
+
+  |.......................                                          |  36%
+label: unnamed-chunk-17 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |........................                                         |  37%
+  ordinary text without R code
+
+  |........................                                         |  38%
+label: unnamed-chunk-18 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |.........................                                        |  39%
+  ordinary text without R code
+
+  |..........................                                       |  40%
+label: unnamed-chunk-19 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |..........................                                       |  41%
+  ordinary text without R code
+
+  |...........................                                      |  42%
+label: unnamed-chunk-20 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |............................                                     |  43%
+  ordinary text without R code
+
+  |............................                                     |  44%
+label: unnamed-chunk-21 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |.............................                                    |  45%
+  ordinary text without R code
+
+  |..............................                                   |  46%
+label: unnamed-chunk-22 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |..............................                                   |  47%
+  ordinary text without R code
+
+  |...............................                                  |  48%
+label: unnamed-chunk-23 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |................................                                 |  49%
+  ordinary text without R code
+
+  |................................                                 |  50%
+label: unnamed-chunk-24 (with options) 
+List of 2
+ $ out.width: chr "65%"
+ $ echo     : logi FALSE
+
+  |.................................                                |  50%
+  ordinary text without R code
+
+  |.................................                                |  51%
+label: unnamed-chunk-25 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |..................................                               |  52%
+  ordinary text without R code
+
+  |...................................                              |  53%
+label: unnamed-chunk-26 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |...................................                              |  54%
+  ordinary text without R code
+
+  |....................................                             |  55%
+label: unnamed-chunk-27 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |.....................................                            |  56%
+  ordinary text without R code
+
+  |.....................................                            |  57%
+label: unnamed-chunk-28 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |......................................                           |  58%
+  ordinary text without R code
+
+  |.......................................                          |  59%
+label: unnamed-chunk-29 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |.......................................                          |  60%
+  ordinary text without R code
+
+  |........................................                         |  61%
+label: unnamed-chunk-30 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |.........................................                        |  62%
+  ordinary text without R code
+
+  |.........................................                        |  63%
+label: unnamed-chunk-31 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |..........................................                       |  64%
+  ordinary text without R code
+
+  |..........................................                       |  65%
+label: unnamed-chunk-32 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |...........................................                      |  66%
+  ordinary text without R code
+
+  |............................................                     |  67%
+label: unnamed-chunk-33 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |............................................                     |  68%
+  ordinary text without R code
+
+  |.............................................                    |  69%
+label: unnamed-chunk-34 (with options) 
+List of 1
+ $ include: logi FALSE
+
+  |..............................................                   |  70%
+  ordinary text without R code
+
+  |..............................................                   |  71%
+label: unnamed-chunk-35 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |...............................................                  |  72%
+  ordinary text without R code
+
+  |................................................                 |  73%
+label: unnamed-chunk-36 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |................................................                 |  74%
+  ordinary text without R code
+
+  |.................................................                |  75%
+label: unnamed-chunk-37 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |..................................................               |  76%
+  ordinary text without R code
+
+  |..................................................               |  77%
+label: unnamed-chunk-38 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |...................................................              |  78%
+  ordinary text without R code
+
+  |...................................................              |  79%
+label: unnamed-chunk-39 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |....................................................             |  80%
+  ordinary text without R code
+
+  |.....................................................            |  81%
+label: unnamed-chunk-40 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |.....................................................            |  82%
+  ordinary text without R code
+
+  |......................................................           |  83%
+label: unnamed-chunk-41 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |.......................................................          |  84%
+  ordinary text without R code
+
+  |.......................................................          |  85%
+label: unnamed-chunk-42 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |........................................................         |  86%
+  ordinary text without R code
+
+  |.........................................................        |  87%
+label: unnamed-chunk-43 (with options) 
+List of 2
+ $ message: logi FALSE
+ $ warning: logi FALSE
+
+downloading 0 resources
+loading from cache 
+    'AH50377 : 57107'
+  |.........................................................        |  88%
+  ordinary text without R code
+
+  |..........................................................       |  89%
+label: unnamed-chunk-44 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |...........................................................      |  90%
+  ordinary text without R code
+
+  |...........................................................      |  91%
+label: unnamed-chunk-45 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |............................................................     |  92%
+  ordinary text without R code
+
+  |............................................................     |  93%
+label: unnamed-chunk-46 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+Quitting from lines 840-844 (AnnotationWorkshop.Rmd) 
+Error in bmRequest(request = request, verbose = verbose) : 
+  Internal Server Error (HTTP 500).
+In addition: Warning message:
+In .get_cds_IDX(mcols0$type, mcols0$phase) :
+  The "phase" metadata column contains non-NA values for features of type stop_codon. This information was
+  ignored.
+
+> mart <- useEnsembl("ensembl", mirror = "useast")
+> head(listDatasets(mart))
+                       dataset                           description
+1 abrachyrhynchus_gene_ensembl Pink-footed goose genes (ASM259213v1)
+2     acalliptera_gene_ensembl      Eastern happy genes (fAstCal1.2)
+3   acarolinensis_gene_ensembl        Anole lizard genes (AnoCar2.0)
+4    acitrinellus_gene_ensembl        Midas cichlid genes (Midas_v5)
+5        ahaastii_gene_ensembl    Great spotted kiwi genes (aptHaa1)
+6    amelanoleuca_gene_ensembl                 Panda genes (ailMel1)
+      version
+1 ASM259213v1
+2  fAstCal1.2
+3   AnoCar2.0
+4    Midas_v5
+5     aptHaa1
+6     ailMel1
+> mart <- useEnsembl("ensembl","hsapiens_gene_ensembl", mirror = "useast")
+> atrib <- listAttributes(mart)
+> filts <- listFilters(mart)
+> head(atrib)
+                           name                  description         page
+1               ensembl_gene_id               Gene stable ID feature_page
+2       ensembl_gene_id_version       Gene stable ID version feature_page
+3         ensembl_transcript_id         Transcript stable ID feature_page
+4 ensembl_transcript_id_version Transcript stable ID version feature_page
+5            ensembl_peptide_id            Protein stable ID feature_page
+6    ensembl_peptide_id_version    Protein stable ID version feature_page
+> head(filts)
+             name              description
+1 chromosome_name Chromosome/scaffold name
+2           start                    Start
+3             end                      End
+4      band_start               Band Start
+5        band_end                 Band End
+6    marker_start             Marker Start
+> afyids <- c("1000_at","1001_at","1002_f_at","1007_s_at")
+> getBM(c("affy_hg_u95av2", "hgnc_symbol"), c("affy_hg_u95av2"), afyids, mart)
+  affy_hg_u95av2 hgnc_symbol
+1      1007_s_at        DDR1
+2        1000_at       MAPK3
+3      1002_f_at     CYP2C19
+4      1002_f_at            
+5        1001_at        TIE1
+> render("AnnotationWorkshop.Rmd")
+
+
+processing file: AnnotationWorkshop.Rmd
+  |.                                                                |   1%
+  ordinary text without R code
+
+  |.                                                                |   2%
+label: setup (with options) 
+List of 2
+ $ include: logi FALSE
+ $ warning: logi FALSE
+
+  |..                                                               |   3%
+  ordinary text without R code
+
+  |...                                                              |   4%
+label: unnamed-chunk-1 (with options) 
+List of 2
+ $ out.width: chr "75%"
+ $ echo     : logi FALSE
+
+  |...                                                              |   5%
+  ordinary text without R code
+
+  |....                                                             |   6%
+label: unnamed-chunk-2 (with options) 
+List of 2
+ $ out.width: chr "75%"
+ $ echo     : logi FALSE
+
+  |.....                                                            |   7%
+  ordinary text without R code
+
+  |.....                                                            |   8%
+label: unnamed-chunk-3 (with options) 
+List of 2
+ $ out.width: chr "75%"
+ $ echo     : logi FALSE
+
+  |......                                                           |   9%
+  ordinary text without R code
+
+  |......                                                           |  10%
+label: unnamed-chunk-4 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |.......                                                          |  11%
+  ordinary text without R code
+
+  |........                                                         |  12%
+label: unnamed-chunk-5 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |........                                                         |  13%
+  ordinary text without R code
+
+  |.........                                                        |  14%
+label: unnamed-chunk-6 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |..........                                                       |  15%
+  ordinary text without R code
+
+  |..........                                                       |  16%
+label: unnamed-chunk-7 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ warning: logi FALSE
+
+  |...........                                                      |  17%
+  ordinary text without R code
+
+  |............                                                     |  18%
+label: unnamed-chunk-8 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |............                                                     |  19%
+  ordinary text without R code
+
+  |.............                                                    |  20%
+label: unnamed-chunk-9 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |..............                                                   |  21%
+  ordinary text without R code
+
+  |..............                                                   |  22%
+label: unnamed-chunk-10 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |...............                                                  |  23%
+  ordinary text without R code
+
+  |...............                                                  |  24%
+label: unnamed-chunk-11 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |................                                                 |  25%
+  ordinary text without R code
+
+  |.................                                                |  26%
+label: unnamed-chunk-12 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |.................                                                |  27%
+  ordinary text without R code
+
+  |..................                                               |  28%
+label: unnamed-chunk-13 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |...................                                              |  29%
+  ordinary text without R code
+
+  |...................                                              |  30%
+label: unnamed-chunk-14 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |....................                                             |  31%
+  ordinary text without R code
+
+  |.....................                                            |  32%
+label: unnamed-chunk-15 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |.....................                                            |  33%
+  ordinary text without R code
+
+  |......................                                           |  34%
+label: unnamed-chunk-16 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |.......................                                          |  35%
+  ordinary text without R code
+
+  |.......................                                          |  36%
+label: unnamed-chunk-17 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |........................                                         |  37%
+  ordinary text without R code
+
+  |........................                                         |  38%
+label: unnamed-chunk-18 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |.........................                                        |  39%
+  ordinary text without R code
+
+  |..........................                                       |  40%
+label: unnamed-chunk-19 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |..........................                                       |  41%
+  ordinary text without R code
+
+  |...........................                                      |  42%
+label: unnamed-chunk-20 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |............................                                     |  43%
+  ordinary text without R code
+
+  |............................                                     |  44%
+label: unnamed-chunk-21 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |.............................                                    |  45%
+  ordinary text without R code
+
+  |..............................                                   |  46%
+label: unnamed-chunk-22 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |..............................                                   |  47%
+  ordinary text without R code
+
+  |...............................                                  |  48%
+label: unnamed-chunk-23 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |................................                                 |  49%
+  ordinary text without R code
+
+  |................................                                 |  50%
+label: unnamed-chunk-24 (with options) 
+List of 2
+ $ out.width: chr "65%"
+ $ echo     : logi FALSE
+
+  |.................................                                |  50%
+  ordinary text without R code
+
+  |.................................                                |  51%
+label: unnamed-chunk-25 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |..................................                               |  52%
+  ordinary text without R code
+
+  |...................................                              |  53%
+label: unnamed-chunk-26 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |...................................                              |  54%
+  ordinary text without R code
+
+  |....................................                             |  55%
+label: unnamed-chunk-27 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |.....................................                            |  56%
+  ordinary text without R code
+
+  |.....................................                            |  57%
+label: unnamed-chunk-28 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |......................................                           |  58%
+  ordinary text without R code
+
+  |.......................................                          |  59%
+label: unnamed-chunk-29 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |.......................................                          |  60%
+  ordinary text without R code
+
+  |........................................                         |  61%
+label: unnamed-chunk-30 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |.........................................                        |  62%
+  ordinary text without R code
+
+  |.........................................                        |  63%
+label: unnamed-chunk-31 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |..........................................                       |  64%
+  ordinary text without R code
+
+  |..........................................                       |  65%
+label: unnamed-chunk-32 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |...........................................                      |  66%
+  ordinary text without R code
+
+  |............................................                     |  67%
+label: unnamed-chunk-33 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |............................................                     |  68%
+  ordinary text without R code
+
+  |.............................................                    |  69%
+label: unnamed-chunk-34 (with options) 
+List of 1
+ $ include: logi FALSE
+
+  |..............................................                   |  70%
+  ordinary text without R code
+
+  |..............................................                   |  71%
+label: unnamed-chunk-35 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |...............................................                  |  72%
+  ordinary text without R code
+
+  |................................................                 |  73%
+label: unnamed-chunk-36 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |................................................                 |  74%
+  ordinary text without R code
+
+  |.................................................                |  75%
+label: unnamed-chunk-37 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |..................................................               |  76%
+  ordinary text without R code
+
+  |..................................................               |  77%
+label: unnamed-chunk-38 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |...................................................              |  78%
+  ordinary text without R code
+
+  |...................................................              |  79%
+label: unnamed-chunk-39 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |....................................................             |  80%
+  ordinary text without R code
+
+  |.....................................................            |  81%
+label: unnamed-chunk-40 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |.....................................................            |  82%
+  ordinary text without R code
+
+  |......................................................           |  83%
+label: unnamed-chunk-41 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |.......................................................          |  84%
+  ordinary text without R code
+
+  |.......................................................          |  85%
+label: unnamed-chunk-42 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |........................................................         |  86%
+  ordinary text without R code
+
+  |.........................................................        |  87%
+label: unnamed-chunk-43 (with options) 
+List of 2
+ $ message: logi FALSE
+ $ warning: logi FALSE
+
+downloading 0 resources
+loading from cache 
+    'AH50377 : 57107'
+  |.........................................................        |  88%
+  ordinary text without R code
+
+  |..........................................................       |  89%
+label: unnamed-chunk-44 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |...........................................................      |  90%
+  ordinary text without R code
+
+  |...........................................................      |  91%
+label: unnamed-chunk-45 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+Quitting from lines 829-833 (AnnotationWorkshop.Rmd) 
+Error in bmRequest(request = request, ssl.verifypeer = ssl.verifypeer,  : 
+  Internal Server Error (HTTP 500).
+In addition: Warning messages:
+1: call dbDisconnect() when finished working with a connection 
+2: In .get_cds_IDX(mcols0$type, mcols0$phase) :
+  The "phase" metadata column contains non-NA values for features of type stop_codon. This information was
+  ignored.
+
+> 
