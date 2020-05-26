@@ -1,10 +1,11 @@
 ---
 
 output:
-  ioslides_presentation:
-    fig_retina: null
-    css: style.css
-    widescreen: false
+  rmarkdown::html_document;
+    highlight: pygments
+    toc: true
+    toc_depth: 3
+	fig_width: 5
 vignette: >
   %\VignetteIndexEntry{Introduction to Bioconductor Annotation Resources}
   %\VignetteEngine{knitr::rmarkdown}
@@ -25,7 +26,7 @@ ul > li:before {
 	
 # Introduction to Bioconductor Annotation Resources
 
-Bioc 2019: 24-27 June
+Bioc 2020: 29-31 July
 
 ## Instructors
 
