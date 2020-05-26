@@ -1,4 +1,5 @@
 # Introduction to Bioconductor annotation resources
+[![Build Status](https://travis-ci.com/jmacdon/Bioc2020Anno.svg?branch=master)](https://travis-ci.com/jmacdon/Bioc2020Anno)
 
 # Instructors
 
