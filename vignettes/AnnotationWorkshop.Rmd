@@ -1,10 +1,10 @@
 ---
 
 output:
-  rmarkdown::html_document;
+  rmarkdown::html_document:
     highlight: pygments
     toc: true
-    toc_depth: 3
+    toc_depth: 5
 vignette: >
   %\VignetteIndexEntry{Introduction to Bioconductor Annotation Resources}
   %\VignetteEngine{knitr::rmarkdown}
