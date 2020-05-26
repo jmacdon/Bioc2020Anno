@@ -5,7 +5,6 @@ output:
     highlight: pygments
     toc: true
     toc_depth: 3
-	fig_width: 5
 vignette: >
   %\VignetteIndexEntry{Introduction to Bioconductor Annotation Resources}
   %\VignetteEngine{knitr::rmarkdown}
