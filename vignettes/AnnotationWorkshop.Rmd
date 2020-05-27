@@ -746,13 +746,20 @@ GRCh38TxDb
 
 ## biomaRt
 
+
 The biomaRt package allows queries to an Ensembl Biomart server. We
 can see the choices of servers that we can use:
 
-```{r, warning = FALSE}
+```{r, eval = FALSE}
 
 library(biomaRt)
 listMarts(host = "useast.ensembl.org")
+
+               biomart                version
+1 ENSEMBL_MART_ENSEMBL      Ensembl Genes 100
+2   ENSEMBL_MART_MOUSE      Mouse strains 100
+3     ENSEMBL_MART_SNP  Ensembl Variation 100
+4 ENSEMBL_MART_FUNCGEN Ensembl Regulation 100
 
 ```
 ## biomaRt data sets
@@ -760,10 +767,26 @@ listMarts(host = "useast.ensembl.org")
 And we can then check for the available data sets on a particular
 server.
 
-```{r, warning = FALSE}
+```{r, eval = FALSE}
 
-mart <- useEnsembl("ensembl", mirror = "useast")
+mart <- useEnsembl("ensembl")
 head(listDatasets(mart))
+
+                     dataset                                  description
+1   acalliptera_gene_ensembl             Eastern happy genes (fAstCal1.2)
+2 acarolinensis_gene_ensembl               Anole lizard genes (AnoCar2.0)
+3  acchrysaetos_gene_ensembl              Golden eagle genes (bAquChr1.2)
+4  acitrinellus_gene_ensembl               Midas cichlid genes (Midas_v5)
+5  amelanoleuca_gene_ensembl                        Panda genes (ailMel1)
+6    amexicanus_gene_ensembl Mexican tetra genes (Astyanax_mexicanus-2.0)
+                 version
+1             fAstCal1.2
+2              AnoCar2.0
+3             bAquChr1.2
+4               Midas_v5
+5                ailMel1
+6 Astyanax_mexicanus-2.0
+> 
 
 ```
 ## biomaRt queries
@@ -771,9 +794,9 @@ head(listDatasets(mart))
 After setting up a `mart` object pointing to the server and data set
 that we care about, we can make queries. We first set up the `mart` object.
 
-```{r, warning = FALSE}
+```{r, eval = FALSE}
 
-mart <- useEnsembl("ensembl","hsapiens_gene_ensembl", mirror = "useast")
+mart <- useEnsembl("ensembl","hsapiens_gene_ensembl"                   )
 
 ```
 Queries are of the form
@@ -794,12 +817,26 @@ where
 Both attributes and filters have rather inscrutable names, but a
 listing can be accessed using
 
-```{r, warning = FALSE}
+```{r, eval = FALSE}
 
 atrib <- listAttributes(mart)
 filts <- listFilters(mart)
 head(atrib)
+                           name                  description         page
+1               ensembl_gene_id               Gene stable ID feature_page
+2       ensembl_gene_id_version       Gene stable ID version feature_page
+3         ensembl_transcript_id         Transcript stable ID feature_page
+4 ensembl_transcript_id_version Transcript stable ID version feature_page
+5            ensembl_peptide_id            Protein stable ID feature_page
+6    ensembl_peptide_id_version    Protein stable ID version feature_page
 head(filts)
+                name                            description
+1    chromosome_name               Chromosome/scaffold name
+2              start                                  Start
+3                end                                    End
+4             strand                                 Strand
+5 chromosomal_region e.g. 1:100:10000:-1, 1:100000:200000:1
+6          with_ccds                        With CCDS ID(s)
 
 
 ```
@@ -808,11 +845,17 @@ head(filts)
 
 A simple example query
 
-```{r, warning = FALSE}
+```{r, eval = FALSE}
 
 afyids <- c("1000_at","1001_at","1002_f_at","1007_s_at")
 getBM(c("affy_hg_u95av2", "hgnc_symbol"), c("affy_hg_u95av2"), afyids, mart)
 
+  affy_hg_u95av2 hgnc_symbol
+1        1000_at       MAPK3
+2      1007_s_at        DDR1
+3        1001_at        TIE1
+4      1002_f_at            
+5      1002_f_at     CYP2C19
 ```
 
 ## biomaRt exercises
