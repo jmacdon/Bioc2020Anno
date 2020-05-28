@@ -1,12 +1,12 @@
-Package: Bioc2019Anno
+Package: Bioc2020Anno
 Type: Package
-Title: Package for Bioconductor 2018 annotation workshop
+Title: Package for Bioconductor 2020 annotation workshop
 Version: 0.5.4
 Date: 2019-03-12
 Author: James W. MacDonald and Lori Shepherd
 Maintainer: James W. MacDonald <jmacdon@uw.edu>
 Description: This is a package for the annotation workshop, presented
-	     at BioC 2019.
+	     at BioC 2020.
 License: Apache License 2.0
 VignetteBuilder: knitr
 Depends: org.Hs.eg.db,

@@ -112,7 +112,7 @@ to a Biologist.
 
 ```{r setup, include = FALSE, warning = FALSE}
 
-library(Bioc2019Anno)
+library(Bioc2020Anno)
 library(hugene20sttranscriptcluster.db)
 library(EnsDb.Mmusculus.v79)
 library(org.Hs.eg.db)
@@ -132,7 +132,7 @@ Map a known ID to other functional or positional information
 
 ```{r, out.width = "75%", echo = FALSE}
 
-knitr::include_graphics(file.path(system.file(package = "Bioc2019Anno", "vignettes"), "mapping.png"))
+knitr::include_graphics(file.path(system.file(package = "Bioc2020Anno", "vignettes"), "mapping.png"))
 
 ```
 
@@ -144,7 +144,7 @@ information
 
 ```{r, out.width = "75%", echo = FALSE}
 
-knitr::include_graphics(file.path(system.file(package = "Bioc2019Anno", "vignettes"), "boxes.png"))
+knitr::include_graphics(file.path(system.file(package = "Bioc2020Anno", "vignettes"), "boxes.png"))
 
 ```
 
@@ -156,7 +156,7 @@ The end result might be as simple as a data.frame or HTML table, or as complex a
 
 ```{r, out.width = "75%", echo = FALSE}
 
-knitr::include_graphics(file.path(system.file(package = "Bioc2019Anno", "vignettes"),"eset.png"))
+knitr::include_graphics(file.path(system.file(package = "Bioc2020Anno", "vignettes"),"eset.png"))
 
 ```
 
@@ -165,7 +165,7 @@ knitr::include_graphics(file.path(system.file(package = "Bioc2019Anno", "vignett
 
 ```{r, warning = FALSE}
 
-load(file.path(system.file(package = "Bioc2019Anno", "extdata"), "eset.Rdata"))
+load(file.path(system.file(package = "Bioc2020Anno", "extdata"), "eset.Rdata"))
 eset
 
 ```
@@ -461,7 +461,7 @@ annotations are GRanges, so you can subset by genomic locations:
 
 ```{r, out.width = "65%", echo = FALSE}
 
-knitr::include_graphics(file.path(system.file(package = "Bioc2019Anno", "vignettes"), "subset.png"))
+knitr::include_graphics(file.path(system.file(package = "Bioc2020Anno", "vignettes"), "subset.png"))
 
 ```
 
@@ -725,9 +725,19 @@ qry$sourceurl
 
 ```{r, message = FALSE, warning = FALSE}
 
-whatIwant <- qry[["AH50377"]]
+whatIwant <- qry[["AH80077"]]
 
 ```
+
+```{r, include = FALSE}
+
+## fix for now
+zz <- seqinfo(whatIwant)
+genome(zz) <- "GRCh38"
+seqinfo(whatIwant) <- zz
+
+```
+
 We can use these data as they are, or convert to a TxDb format:
 
 ```{r, warning = FALSE}
