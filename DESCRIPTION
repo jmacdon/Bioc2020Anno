@@ -1,7 +1,7 @@
 Package: Bioc2020Anno
 Type: Package
 Title: Package for Bioconductor 2020 annotation workshop
-Version: 0.5.4
+Version: 0.5.5
 Date: 2019-03-12
 Author: James W. MacDonald and Lori Shepherd
 Maintainer: James W. MacDonald <jmacdon@uw.edu>

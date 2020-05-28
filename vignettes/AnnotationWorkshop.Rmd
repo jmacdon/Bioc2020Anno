@@ -732,9 +732,7 @@ whatIwant <- qry[["AH80077"]]
 ```{r, include = FALSE}
 
 ## fix for now
-zz <- seqinfo(whatIwant)
-genome(zz) <- "GRCh38"
-seqinfo(whatIwant) <- zz
+whatIwant <- keepStandardChromosomes(whatIwant, pruning.mode = "coarse")
 
 ```
 
