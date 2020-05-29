@@ -25,7 +25,8 @@ Depends:
     Organism.dplyr
 Suggests:
     rmarkdown,
-    knitr
+    knitr,
+    pkgdown
 URL: https://jmacdon.github.io/Bioc2020Anno/
 bugReports: https://github.com/jmacdon/Bioc2020Anno/issues/new/choose
 DockerImage: jmacdon/bioc2020anno:latest
