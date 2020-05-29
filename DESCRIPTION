@@ -4,7 +4,7 @@ Version: 0.5.5
 Date: 2019-03-12
 Authors@R: c(person("James", "MacDonald", role = c("aut", "cre"),
 	            email = "jmacdon@uw.edu"),
-             person("Lori", "Shepherd", role = c("aut", "cre"),
+             person("Lori", "Shepherd", role = c("aut"),
 	            email = "Lori.Shepherd@roswellpark.org"))
 Description: This is a package for the annotation workshop, presented
 	     at BioC 2020.
