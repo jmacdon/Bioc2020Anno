@@ -3,8 +3,16 @@ Type: Package
 Title: Package for Bioconductor 2020 annotation workshop
 Version: 0.5.5
 Date: 2019-03-12
-Author: James W. MacDonald and Lori Shepherd
-Maintainer: James W. MacDonald <jmacdon@uw.edu>
+Authors@R:
+	person(given = "James",
+	       family = "MacDonald",
+	       role = c("aut", "cre"),
+	       email = "jmacdon@uw.edu")
+	person(given = "Lori",
+	       family = "Shepherd",
+	       role = c("aut", "cre"),
+	       email = "Lori.Shepherd@roswellpark.org")
+
 Description: This is a package for the annotation workshop, presented
 	     at BioC 2020.
 License: Apache License 2.0
@@ -15,3 +23,6 @@ Depends: org.Hs.eg.db,
 	 hugene20sttranscriptcluster.db, AnnotationDbi, biomaRt,
 	 AnnotationHub, EnsDb.Mmusculus.v79, Organism.dplyr
 Suggests: rmarkdown, knitr
+URL: https://jmacdon.github.io/Bioc2020Anno/
+bugReports: https://github.com/jmacdon/Bioc2020Anno/issues/new/choose
+DockerImage: jmacdon/bioc2020anno:latest

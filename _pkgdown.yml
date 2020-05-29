@@ -1,0 +1,18 @@
+url: https://jmacdon.github.io/Bioc2020Anno
+
+template:
+  params:
+    bootswatch: flatly
+    ganalytics: UA-93043521-1
+
+home:
+  title: "Bioc2020Anno"
+  type: inverse
+
+
+navbar:
+  right:
+   - icon: fa-github
+     href: https://github.com/jmacdon/Bioc2020Anno
+     
+
