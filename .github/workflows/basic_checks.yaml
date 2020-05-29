@@ -33,7 +33,7 @@ jobs:
       - name: Install dependencies
       # mother of god I hate this tidyverse crap
         env:
-	  _R_REMOTES_NO_ERRORS_FROM_WARNINGS_: true
+          _R_REMOTES_NO_ERRORS_FROM_WARNINGS_: true
         run: |
           remotes::install_deps(dependencies = TRUE, repos = BiocManager::repositories())
           remotes::install_cran("rcmdcheck")
