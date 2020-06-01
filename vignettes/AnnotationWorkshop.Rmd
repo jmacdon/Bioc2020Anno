@@ -1,8 +1,7 @@
 ---
 
 title: "Bioconductor 2020 Annotation Workshop"
-output:
-  rmarkdown::html_document:
+output: rmarkdown::html_document:
     highlight: pygments
     toc: true
     toc_depth: 5
@@ -12,18 +11,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 
 ---
-
-<style scoped>
-ul > li:before {
-    color: #1a81c2;
-    vertical-align: middle;
-    font-family: "Arial Black";
-    font-weight: 900;
-    margin-left: -.85em;
-	}
-	</style>
-
-	
+ 	
 # Introduction to Bioconductor Annotation Resources
 
 Bioc 2020: 29-31 July
