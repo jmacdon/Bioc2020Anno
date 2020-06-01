@@ -1,12 +1,10 @@
 ---
-
 title: "Bioconductor 2020 Annotation Workshop"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Bioconductor 2020 Annotation Workshop}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
-
 ---
  	
 # Introduction to Bioconductor Annotation Resources
@@ -118,7 +116,7 @@ Map a known ID to other functional or positional information
 
 ```{r, out.width = "75%", echo = FALSE}
 
-knitr::include_graphics(file.path(system.file(package = "Bioc2020Anno", "vignettes"), "mapping.png"))
+knitr::include_graphics("./mapping.png"))
 
 ```
 
