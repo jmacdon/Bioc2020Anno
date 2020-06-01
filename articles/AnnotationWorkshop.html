@@ -194,19 +194,19 @@ ul > li:before {
 <h2 class="hasAnchor">
 <a href="#what-do-we-mean-by-annotation" class="anchor"></a>What do we mean by annotation?</h2>
 <p>Map a known ID to other functional or positional information</p>
-<p><img src="../../../../tmp/RtmprGE7Dj/temp_libpath38952a987c8/Bioc2020Anno/vignettes/mapping.png" width="75%"></p>
+<p><img src="../../../../tmp/RtmpJuI9Fr/temp_libpath4c348956a4e/Bioc2020Anno/vignettes/mapping.png" width="75%"></p>
 </div>
 <div id="specific-goal" class="section level2">
 <h2 class="hasAnchor">
 <a href="#specific-goal" class="anchor"></a>Specific goal</h2>
 <p>We have data and statistics, and we want to add other useful information</p>
-<p><img src="../../../../tmp/RtmprGE7Dj/temp_libpath38952a987c8/Bioc2020Anno/vignettes/boxes.png" width="75%"></p>
+<p><img src="../../../../tmp/RtmpJuI9Fr/temp_libpath4c348956a4e/Bioc2020Anno/vignettes/boxes.png" width="75%"></p>
 <p>The end result might be as simple as a data.frame or HTML table, or as complex as a <code>RangedSummarizedExperiment</code></p>
 </div>
 <div id="data-containers" class="section level2">
 <h2 class="hasAnchor">
 <a href="#data-containers" class="anchor"></a>Data containers</h2>
-<p><img src="../../../../tmp/RtmprGE7Dj/temp_libpath38952a987c8/Bioc2020Anno/vignettes/eset.png" width="75%"></p>
+<p><img src="../../../../tmp/RtmpJuI9Fr/temp_libpath4c348956a4e/Bioc2020Anno/vignettes/eset.png" width="75%"></p>
 </div>
 <div id="expressionset" class="section level2">
 <h2 class="hasAnchor">
@@ -344,8 +344,7 @@ ul > li:before {
 <li><p>annopkg is the annotation package</p></li>
 <li><p>keys are the IDs that we <strong>know</strong></p></li>
 <li><p>columns are the values we <strong>want</strong></p></li>
-<li>
-<p>keytype is the type of key used</p>
+<li>keytype is the type of key used
 <ul>
 <li>if the keytype is the <strong>central</strong> key, it can remain unspecified</li>
 </ul>
@@ -649,7 +648,7 @@ ul > li:before {
 <h2 class="hasAnchor">
 <a href="#summarizedexperiment-objects" class="anchor"></a>SummarizedExperiment objects</h2>
 <p>SummarizedExperiment objects are like ExpressionSets, but the row-wise annotations are GRanges, so you can subset by genomic locations:</p>
-<p><img src="../../../../tmp/RtmprGE7Dj/temp_libpath38952a987c8/Bioc2020Anno/vignettes/subset.png" width="65%"></p>
+<p><img src="../../../../tmp/RtmpJuI9Fr/temp_libpath4c348956a4e/Bioc2020Anno/vignettes/subset.png" width="65%"></p>
 <p>SummarizedExperiment objects are popular objects for representing expression data and other rectangular data (feature x sample data). Incoming packages are now strongly recommended to use this class representation instead of ExpressionSet.</p>
 </div>
 <div id="txdb-exercises" class="section level2">
@@ -658,8 +657,7 @@ ul > li:before {
 <ul>
 <li><p>How many transcripts does PPARG have, according to UCSC?</p></li>
 <li><p>Does Ensembl agree?</p></li>
-<li>
-<p>How many genes are between 2858473 and 3271812 on chr2 in the hg19 genome?</p>
+<li>How many genes are between 2858473 and 3271812 on chr2 in the hg19 genome?
 <ul>
 <li>Hint: you make a <code>GRanges</code> like this - <code>GRanges("chr2", IRanges(2858473,3271812))</code>
 </li>
@@ -731,8 +729,7 @@ ul > li:before {
 <a href="#organism-dplyr-package" class="anchor"></a>Organism.dplyr package</h2>
 <ul>
 <li><p>Combines the data from TxDb and Org.Db associated packages into local database.</p></li>
-<li>
-<p>Allows functions from both <em>org.*</em> and <em>TxDb.*</em></p>
+<li>Allows functions from both <em>org.*</em> and <em>TxDb.*</em>
 <ul>
 <li>
 <code>keytypes()</code>, <code>select()</code>, …</li>
@@ -1116,7 +1113,7 @@ ul > li:before {
 ## # Genome: GRCh38
 ## # Nb of transcripts: 227887
 ## # Db created by: GenomicFeatures package from Bioconductor
-## # Creation time: 2020-06-01 17:47:59 +0000 (Mon, 01 Jun 2020)
+## # Creation time: 2020-06-01 18:32:30 +0000 (Mon, 01 Jun 2020)
 ## # GenomicFeatures version at creation time: 1.41.0
 ## # RSQLite version at creation time: 2.2.0
 ## # DBSCHEMAVERSION: 1.2</code></pre>
@@ -1174,7 +1171,8 @@ head(listDatasets(mart))
 <p>getBM(<em>attributes</em>, <em>filters</em>, <em>values</em>, <em>mart</em>)</p>
 <p>where</p>
 <ul>
-<li><p>attributes are the things we <strong>want</strong></p></li>
+<li>attributes are the things we <strong>want</strong>
+</li>
 <li><p>filters are the <em>types of</em> IDs we <strong>have</strong></p></li>
 <li><p>values are the IDs we <strong>have</strong></p></li>
 <li><p>mart is the <code>mart</code> object we set up</p></li>

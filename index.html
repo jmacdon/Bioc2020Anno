@@ -117,14 +117,49 @@
 <li>The <a href="https://www.bioconductor.org/packages/release/bioc/vignettes/GenomicFeatures/inst/doc/GenomicFeatures.pdf">GenomicFeatures</a> vignette.</li>
 </ul>
 </div>
+<div id="preparation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#preparation" class="anchor"></a>Preparation</h2>
+<p>To be able to follow along with this workshop, we have created a Docker installation that includes the devel version of R, and all required Bioconductor packages. In order to access this, you need to first install <a href="https://docs.docker.com/engine/install/">Docker</a> on your own computer. Once you have done that, you can then load the Docker container for this workshop by starting Docker.</p>
+<p>How you do this is dependent on your operating system.</p>
+<div id="windows" class="section level3">
+<h3 class="hasAnchor">
+<a href="#windows" class="anchor"></a>Windows</h3>
+<p>Hit the ‘Windows’ key (lower left on your keyboard, between Ctrl and Alt), then type Docker. If Docker is installed you should see Docker App highlighted - click Enter to start the App. It can take some time to get started. You can see it’s doing something by clicking on the little caret (^) in the lower right of your screen - there should be a little animated Docker icon which indicates it’s starting. Once it is started, open a CMD prompt by hitting the Windows key again and typing cmd, then Enter. In the CMD prompt type</p>
+<pre><code>docker run -e PASSWORD=&lt;choose_a_password_for_rstudio&gt; -p 8787:8787 jmacdon/bioc2020anno</code></pre>
+<p>You can choose any password for rstudio - that’s what you will use to log in. It will take some time for the Docker to be downloaded and started, so you might consider doing this ahead of time.</p>
+</div>
+<div id="linux" class="section level3">
+<h3 class="hasAnchor">
+<a href="#linux" class="anchor"></a>Linux</h3>
+<p>For Linux, it depends on how you installed. If you used a package installer then presumably Docker will be set to start automatically. Otherwise you need to start the Docker daemon by hand (or set it to start automatically). There are too many variables to give much detailed information here; for those on Linux, the assumption is that you probably know what you are doing and can figure it out from the Docker install page.</p>
+<p>To start the daemon, if neccessary, do</p>
+<pre><code>sudo dockerd &amp;
+## followed by 
+
+sudo docker run hello-world
+</code></pre>
+<p>If Docker is installed correctly it should print something informative. To get the Docker container, it’s the same as for Windows.</p>
+<pre><code>docker run -e PASSWORD=&lt;choose_a_password_for_rstudio&gt; -p 8787:8787 jmacdon/bioc2020anno</code></pre>
+</div>
+<div id="macos" class="section level3">
+<h3 class="hasAnchor">
+<a href="#macos" class="anchor"></a>MacOS</h3>
+<p>There is an installer for MacOS. As with Windows, follow the instructions - it’s just a regular drag’n’drop install. Once it’s installed and started, open a terminal prompt and as above type.</p>
+<pre><code>docker run -e PASSWORD=&lt;choose_a_password_for_rstudio&gt; -p 8787:8787 jmacdon/bioc2020anno</code></pre>
+<p>For all operating systems, once the Docker container is initialized, you can access it by opening a browser and typing</p>
+<pre><code>http://localhost:8787</code></pre>
+<p>Which should present you with an RStudio login. Use rstudio as the username and the password you used to start the Docker.</p>
+</div>
+</div>
 <div id="workshop-participation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#workshop-participation" class="anchor"></a>Workshop Participation</h2>
 <p>After each type of annotation package is introduced, students will be given the opportunity to practice making their own queries.</p>
 </div>
-<div id="r--bioconductor-packages-used" class="section level2">
+<div id="r-bioconductor-packages-used" class="section level2">
 <h2 class="hasAnchor">
-<a href="#r--bioconductor-packages-used" class="anchor"></a><em>R</em> / <em>Bioconductor</em> packages used</h2>
+<a href="#r-bioconductor-packages-used" class="anchor"></a><em>R</em> / <em>Bioconductor</em> packages used</h2>
 <ul>
 <li>AnnotationDbi</li>
 <li>AnnotationHub</li>
