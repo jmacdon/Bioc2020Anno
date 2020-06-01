@@ -2,6 +2,10 @@
 
 title: "Bioconductor 2020 Annotation Workshop"
 output: rmarkdown::html_document
+vignette: >
+  %\VignetteIndexEntry{How to Use this Package to Build a Bioc Workshop}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 
 ---
  	
