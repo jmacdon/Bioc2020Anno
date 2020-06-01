@@ -1,5 +1,6 @@
 ---
 
+title: "Bioconductor 2020 Annotation Workshop"
 output:
   rmarkdown::html_document:
     highlight: pygments
