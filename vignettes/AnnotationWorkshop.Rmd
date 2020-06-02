@@ -128,7 +128,7 @@ information
 
 ```{r, out.width = "75%", echo = FALSE}
 
-knitr::include_graphics(file.path(system.file(package = "Bioc2020Anno", "vignettes"), "boxes.png"))
+knitr::include_graphics("./boxes.png")
 
 ```
 
@@ -140,7 +140,7 @@ The end result might be as simple as a data.frame or HTML table, or as complex a
 
 ```{r, out.width = "75%", echo = FALSE}
 
-knitr::include_graphics(file.path(system.file(package = "Bioc2020Anno", "vignettes"),"eset.png"))
+knitr::include_graphics("./eset.png")
 
 ```
 
@@ -445,7 +445,7 @@ annotations are GRanges, so you can subset by genomic locations:
 
 ```{r, out.width = "65%", echo = FALSE}
 
-knitr::include_graphics(file.path(system.file(package = "Bioc2020Anno", "vignettes"), "subset.png"))
+knitr::include_graphics("./subset.png")
 
 ```
 
