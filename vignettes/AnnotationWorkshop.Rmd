@@ -116,7 +116,7 @@ Map a known ID to other functional or positional information
 
 ```{r, out.width = "75%", echo = FALSE}
 
-knitr::include_graphics("./mapping.png"))
+knitr::include_graphics("./mapping.png")
 
 ```
 
