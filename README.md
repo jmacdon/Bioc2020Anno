@@ -1,5 +1,5 @@
 # Introduction to Bioconductor annotation resources
-![](https://github.com/jmacdon/Bioc2020Anno/.github/workflows/basic_checks.yaml/badge.svg)
+![](https://github.com/jmacdon/Bioc2020Anno/workflows/.github/workflows/basic_checks.yaml/badge.svg)
 # Instructors
 
 * James W. MacDonald (jmacdon@uw.edu)
