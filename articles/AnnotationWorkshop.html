@@ -37,7 +37,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Bioc2020Anno</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0</span>
       </span>
     </div>
 
@@ -82,7 +82,7 @@
 
       
 
-      </header><div class="row">
+      </header><script src="AnnotationWorkshop_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Bioconductor 2020 Annotation Workshop</h1>
@@ -874,29 +874,29 @@
 <p>AnnotationHub is a package that allows us to query and download many different annotation objects, without having to explicitly install them.</p>
 <div class="sourceCode" id="cb72"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">AnnotationHub</span>)
 <span class="no">hub</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/AnnotationHub/man/AnnotationHub-class.html">AnnotationHub</a></span>()</pre></body></html></div>
-<pre><code>## snapshotDate(): 2020-05-23</code></pre>
+<pre><code>## snapshotDate(): 2020-06-18</code></pre>
 <div class="sourceCode" id="cb74"><html><body><pre class="r"><span class="no">hub</span></pre></body></html></div>
-<pre><code>## AnnotationHub with 50278 records
-## # snapshotDate(): 2020-05-23
+<pre><code>## AnnotationHub with 50279 records
+## # snapshotDate(): 2020-06-18
 ## # $dataprovider: BroadInstitute, Ensembl, UCSC, ftp://ftp.ncbi.nlm.nih.gov/gene/DATA/, Haemcode, FungiDB, Inparanoid...
-## # $species: Homo sapiens, Mus musculus, Drosophila melanogaster, Sus scrofa, Bos taurus, Pan troglodytes, Rattus nor...
+## # $species: Homo sapiens, Mus musculus, Drosophila melanogaster, Bos taurus, Pan troglodytes, Rattus norvegicus, Dan...
 ## # $rdataclass: GRanges, BigWigFile, TwoBitFile, Rle, EnsDb, OrgDb, ChainFile, TxDb, Inparanoid8Db, data.frame
 ## # additional mcols(): taxonomyid, genome, description, coordinate_1_based, maintainer, rdatadateadded,
 ## #   preparerclass, tags, rdatapath, sourceurl, sourcetype 
 ## # retrieve records with, e.g., 'object[["AH5012"]]' 
 ## 
-##             title                                                         
-##   AH5012  | Chromosome Band                                               
-##   AH5013  | STS Markers                                                   
-##   AH5014  | FISH Clones                                                   
-##   AH5015  | Recomb Rate                                                   
-##   AH5016  | ENCODE Pilot                                                  
-##   ...       ...                                                           
-##   AH83110 | Zonotrichia_albicollis.Zonotrichia_albicollis-1.0.1.ncrna.2bit
-##   AH83111 | Zosterops_lateralis_melanops.ASM128173v1.cdna.all.2bit        
-##   AH83112 | Zosterops_lateralis_melanops.ASM128173v1.dna_rm.toplevel.2bit 
-##   AH83113 | Zosterops_lateralis_melanops.ASM128173v1.dna_sm.toplevel.2bit 
-##   AH83114 | Zosterops_lateralis_melanops.ASM128173v1.ncrna.2bit</code></pre>
+##             title                                                                  
+##   AH5012  | Chromosome Band                                                        
+##   AH5013  | STS Markers                                                            
+##   AH5014  | FISH Clones                                                            
+##   AH5015  | Recomb Rate                                                            
+##   AH5016  | ENCODE Pilot                                                           
+##   ...       ...                                                                    
+##   AH83111 | Zosterops_lateralis_melanops.ASM128173v1.cdna.all.2bit                 
+##   AH83112 | Zosterops_lateralis_melanops.ASM128173v1.dna_rm.toplevel.2bit          
+##   AH83113 | Zosterops_lateralis_melanops.ASM128173v1.dna_sm.toplevel.2bit          
+##   AH83114 | Zosterops_lateralis_melanops.ASM128173v1.ncrna.2bit                    
+##   AH83115 | Mapping table of metabolite IDs and common names from different sources</code></pre>
 </div>
 <div id="querying-annotationhub" class="section level2">
 <h2 class="hasAnchor">
@@ -964,7 +964,7 @@
 <pre><code>## [1] "Homo sapiens"         "Vicugna pacos"        "Dasypus novemcinctus" "Otolemur garnettii"   "Papio hamadryas"     
 ## [6] "Papio anubis"</code></pre>
 <div class="sourceCode" id="cb84"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span>(<span class="no">hub</span>$<span class="no">species</span>))</pre></body></html></div>
-<pre><code>## [1] 2068</code></pre>
+<pre><code>## [1] 2116</code></pre>
 </div>
 <div id="annotationhub-data-sources" class="section level2">
 <h2 class="hasAnchor">
@@ -981,7 +981,7 @@
 <div class="sourceCode" id="cb88"><html><body><pre class="r"><span class="no">qry</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/AnnotationHub/man/AnnotationHub-class.html">query</a></span>(<span class="no">hub</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"granges"</span>,<span class="st">"homo sapiens"</span>,<span class="st">"ensembl"</span>))
 <span class="no">qry</span></pre></body></html></div>
 <pre><code>## AnnotationHub with 84 records
-## # snapshotDate(): 2020-05-23
+## # snapshotDate(): 2020-06-18
 ## # $dataprovider: Ensembl, UCSC
 ## # $species: Homo sapiens
 ## # $rdataclass: GRanges
@@ -1101,10 +1101,10 @@
 <pre><code>## TxDb object:
 ## # Db type: TxDb
 ## # Supporting package: GenomicFeatures
-## # Genome: GRCh38
+## # Genome: GRCh38.p13
 ## # Nb of transcripts: 227887
 ## # Db created by: GenomicFeatures package from Bioconductor
-## # Creation time: 2020-06-08 16:19:28 +0000 (Mon, 08 Jun 2020)
+## # Creation time: 2020-06-26 15:27:41 +0000 (Fri, 26 Jun 2020)
 ## # GenomicFeatures version at creation time: 1.41.0
 ## # RSQLite version at creation time: 2.2.0
 ## # DBSCHEMAVERSION: 1.2</code></pre>
