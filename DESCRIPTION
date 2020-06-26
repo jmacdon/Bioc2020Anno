@@ -1,6 +1,6 @@
 Package: Bioc2020Anno
-Title: Package for Bioconductor 2020 annotation workshop
-Version: 0.5.9
+Title: Introduction to Bioconductor annotation resources
+Version: 0.6.0
 Authors@R: c(person("James", "MacDonald", role = c("aut", "cre"),
 	            email = "jmacdon@uw.edu"),
              person("Lori", "Shepherd", role = c("aut"),
